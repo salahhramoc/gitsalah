@@ -1,0 +1,50 @@
+/* [nama, provinsi, lat, lng, pulau, rajaongkir_city_id] */
+const KOTA = [
+  ["Jakarta", "DKI Jakarta", -6.2088, 106.8456, "Jawa", 152],
+  ["Bekasi", "Jawa Barat", -6.2383, 106.9756, "Jawa", 55],
+  ["Depok", "Jawa Barat", -6.4025, 106.7942, "Jawa", 115],
+  ["Tangerang", "Banten", -6.1783, 106.6319, "Jawa", 456],
+  ["Bogor", "Jawa Barat", -6.5971, 106.806, "Jawa", 79],
+  ["Bandung", "Jawa Barat", -6.9175, 107.6191, "Jawa", 23],
+  ["Cirebon", "Jawa Barat", -6.7063, 108.557, "Jawa", 108],
+  ["Semarang", "Jawa Tengah", -6.9667, 110.4167, "Jawa", 399],
+  ["Solo (Surakarta)", "Jawa Tengah", -7.5755, 110.8243, "Jawa", 445],
+  ["Yogyakarta", "DI Yogyakarta", -7.7956, 110.3695, "Jawa", 501],
+  ["Purwokerto", "Jawa Tengah", -7.4243, 109.2396, "Jawa", 41],
+  ["Surabaya", "Jawa Timur", -7.2575, 112.7521, "Jawa", 444],
+  ["Malang", "Jawa Timur", -7.9666, 112.6326, "Jawa", 256],
+  ["Jember", "Jawa Timur", -8.1845, 113.6681, "Jawa", 160],
+  ["Banyuwangi", "Jawa Timur", -8.2192, 114.3691, "Jawa", 42],
+  ["Serang", "Banten", -6.1201, 106.1503, "Jawa", 402],
+  ["Denpasar", "Bali", -8.6705, 115.2126, "Bali", 114],
+  ["Mataram", "Nusa Tenggara Barat", -8.5833, 116.1167, "Nusa Tenggara", 276],
+  ["Kupang", "Nusa Tenggara Timur", -10.1772, 123.607, "Nusa Tenggara", 213],
+  ["Medan", "Sumatera Utara", 3.5952, 98.6722, "Sumatera", 278],
+  ["Banda Aceh", "Aceh", 5.5483, 95.3238, "Sumatera", 20],
+  ["Padang", "Sumatera Barat", -0.9471, 100.4172, "Sumatera", 318],
+  ["Pekanbaru", "Riau", 0.5071, 101.4478, "Sumatera", 350],
+  ["Batam", "Kepulauan Riau", 1.0456, 104.0305, "Sumatera", 48],
+  ["Jambi", "Jambi", -1.6101, 103.6131, "Sumatera", 156],
+  ["Palembang", "Sumatera Selatan", -2.9761, 104.7754, "Sumatera", 327],
+  ["Bengkulu", "Bengkulu", -3.8004, 102.2655, "Sumatera", 62],
+  ["Bandar Lampung", "Lampung", -5.45, 105.2667, "Sumatera", 21],
+  ["Pontianak", "Kalimantan Barat", -0.0263, 109.3425, "Kalimantan", 365],
+  ["Banjarmasin", "Kalimantan Selatan", -3.3194, 114.5906, "Kalimantan", 36],
+  ["Balikpapan", "Kalimantan Timur", -1.2379, 116.8529, "Kalimantan", 19],
+  ["Samarinda", "Kalimantan Timur", -0.5022, 117.1536, "Kalimantan", 387],
+  ["Makassar", "Sulawesi Selatan", -5.1477, 119.4327, "Sulawesi", 254],
+  ["Manado", "Sulawesi Utara", 1.4748, 124.8421, "Sulawesi", 267],
+  ["Palu", "Sulawesi Tengah", -0.9003, 119.8779, "Sulawesi", 329],
+  ["Kendari", "Sulawesi Tenggara", -3.9985, 122.5129, "Sulawesi", 182],
+  ["Ambon", "Maluku", -3.6954, 128.1814, "Maluku", 14],
+  ["Ternate", "Maluku Utara", 0.7833, 127.3667, "Maluku", 477],
+  ["Jayapura", "Papua", -2.5337, 140.7181, "Papua", 158],
+  ["Sorong", "Papua Barat Daya", -0.8762, 131.2558, "Papua", 425]
+];
+
+const FAKTOR_PULAU = { Jawa: 1, Bali: 1, Sumatera: 1, Kalimantan: 1.05, Sulawesi: 1.1, "Nusa Tenggara": 1.2, Maluku: 1.6, Papua: 2.6 };
+const KURIR = [
+  { id: "jne", nama: "JNE", warna: "#e11d2e", situs: "https://www.jne.co.id", layanan: [{ n: "REG (Reguler)", tipe: "Reguler", b: 8000, s: 4000, h: [2, 3] }, { n: "YES (Yakin Esok Sampai)", tipe: "Express", b: 16000, s: 7000, h: [1, 1], maxZ: 3 }] },
+  { id: "tiki", nama: "TIKI", warna: "#0284c7", situs: "https://www.tiki.id", layanan: [{ n: "REG (Reguler)", tipe: "Reguler", b: 8000, s: 3800, h: [2, 3] }, { n: "ONS (Over Night Service)", tipe: "Express", b: 15000, s: 6500, h: [1, 1], maxZ: 3 }] },
+  { id: "pos", nama: "POS Indonesia", warna: "#ea580c", situs: "https://www.posindonesia.co.id", layanan: [{ n: "Pos Reguler", tipe: "Reguler", b: 7500, s: 3600, h: [3, 5] }, { n: "Pos Kilat Khusus", tipe: "Express", b: 13500, s: 5800, h: [1, 3], maxZ: 4 }] }
+];
